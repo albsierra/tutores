@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IES2Mares\tutores\InformacionAlumnosBundle\Entity\Respuesta" table="respuesta">
+    <indexes>
+      <index name="fk_respuesta_preguntaIncorporada1_idx" columns="preguntaIncorporada"/>
+      <index name="IDX_6C6EC5EE5B7406D9" columns="profesor"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="index4" columns="profesor,preguntaIncorporada"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="valor" type="integer" column="valor" nullable="false"/>
+    <many-to-one field="profesor" target-entity="Profesor">
+      <join-columns>
+        <join-column name="profesor" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="preguntaincorporada" target-entity="Preguntaincorporada">
+      <join-columns>
+        <join-column name="preguntaIncorporada" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

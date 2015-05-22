@@ -1,0 +1,11 @@
+services:
+    sonata.admin.alumno:
+        class: IES2Mares\tutores\InformacionAlumnosBundle\Admin\AlumnoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "Alumnos" }
+        arguments:
+            - ~
+            - IES2Mares\tutores\InformacionAlumnosBundle\Entity\Alumno
+            - ~
+        calls:
+            - [ setTranslationDomain, [IES2MarestutoresInformacionAlumnosBundle]]

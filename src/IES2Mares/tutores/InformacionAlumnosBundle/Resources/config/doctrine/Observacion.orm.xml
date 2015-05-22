@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IES2Mares\tutores\InformacionAlumnosBundle\Entity\Observacion" table="observacion">
+    <indexes>
+      <index name="IDX_8B8B4C65B7406D9" columns="profesor"/>
+      <index name="IDX_8B8B4C61C5D482" columns="cuestionario"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="observacion" type="text" column="observacion" nullable="false"/>
+    <many-to-one field="profesor" target-entity="Profesor">
+      <join-columns>
+        <join-column name="profesor" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cuestionario" target-entity="Cuestionario">
+      <join-columns>
+        <join-column name="cuestionario" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

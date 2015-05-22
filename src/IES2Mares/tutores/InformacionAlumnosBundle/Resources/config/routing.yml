@@ -1,0 +1,3 @@
+tutores_homepage:
+    path:  /
+    defaults: { _controller: IES2MarestutoresInformacionAlumnosBundle:Default:index }

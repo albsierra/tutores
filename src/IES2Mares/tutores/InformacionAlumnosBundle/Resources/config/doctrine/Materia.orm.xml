@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IES2Mares\tutores\InformacionAlumnosBundle\Entity\Materia" table="materia">
+    <id name="codigo" type="string" column="codigo" length="6">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="materia" type="string" column="materia" length="100" nullable="true"/>
+    <field name="ensenanza" type="string" column="ensenanza" length="100" nullable="true"/>
+    <field name="curso" type="string" column="curso" length="1" nullable="true"/>
+  </entity>
+</doctrine-mapping>

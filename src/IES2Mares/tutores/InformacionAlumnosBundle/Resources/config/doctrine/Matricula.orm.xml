@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IES2Mares\tutores\InformacionAlumnosBundle\Entity\Matricula" table="matricula">
+    <indexes>
+      <index name="fk_matricula_grupo1_idx" columns="grupo"/>
+      <index name="IDX_15DF1885D59CA413" columns="expediente"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="index4" columns="expediente,grupo"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="expediente" target-entity="Alumno">
+      <join-columns>
+        <join-column name="expediente" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="grupo" target-entity="Grupo">
+      <join-columns>
+        <join-column name="grupo" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

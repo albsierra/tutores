@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IES2Mares\tutores\InformacionAlumnosBundle\Entity\Grupo" table="grupo">
+    <indexes>
+      <index name="tutor" columns="tutor"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="anyo" type="string" column="anyo" length="7" nullable="false"/>
+    <field name="grupo" type="string" column="grupo" length="5" nullable="false"/>
+    <field name="subgrupo" type="string" column="subgrupo" length="5" nullable="false"/>
+    <field name="ensenanza" type="string" column="ensenanza" length="80" nullable="true"/>
+    <field name="curso" type="integer" column="curso" nullable="true"/>
+    <field name="horariovisita" type="string" column="horarioVisita" length="10" nullable="true"/>
+    <many-to-one field="tutor" target-entity="Profesor">
+      <join-columns>
+        <join-column name="tutor" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

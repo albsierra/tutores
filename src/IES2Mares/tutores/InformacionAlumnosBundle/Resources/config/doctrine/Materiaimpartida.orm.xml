@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IES2Mares\tutores\InformacionAlumnosBundle\Entity\Materiaimpartida" table="materiaImpartida">
+    <indexes>
+      <index name="fk_MateriasImpartidas_Materias1_idx" columns="materia"/>
+      <index name="fk_MateriasImpartidas_Profesores1_idx" columns="profesor"/>
+      <index name="fk_materiaImpartida_grupo1_idx" columns="grupo"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="index5" columns="materia,profesor,grupo"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="grupo" target-entity="Grupo">
+      <join-columns>
+        <join-column name="grupo" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="materia" target-entity="Materia">
+      <join-columns>
+        <join-column name="materia" referenced-column-name="codigo"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="profesor" target-entity="Profesor">
+      <join-columns>
+        <join-column name="profesor" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,4 @@
+services:
+#    ies2_marestutores_informacion_alumnos.example:
+#        class: IES2Mares\tutores\InformacionAlumnosBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

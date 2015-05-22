@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IES2Mares\tutores\InformacionAlumnosBundle\Entity\Profesor" table="profesor">
+    <unique-constraints>
+      <unique-constraint name="UNIQ_5B7406D932DCDBAF" columns="idUsuario"/>
+    </unique-constraints>
+    <id name="id" type="string" column="id" length="6">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="apellidos" type="string" column="apellidos" length="19" nullable="false"/>
+    <field name="nombre" type="string" column="nombre" length="19" nullable="false"/>
+    <field name="email" type="string" column="email" length="100" nullable="true"/>
+    <field name="dni" type="string" column="dni" length="10" nullable="true"/>
+    <field name="movil" type="string" column="movil" length="9" nullable="true"/>
+    <field name="departamento" type="string" column="departamento" length="4" nullable="true"/>
+    <many-to-one field="idusuario" target-entity="Usuario">
+      <join-columns>
+        <join-column name="idUsuario" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
