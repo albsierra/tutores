@@ -1,3 +1,6 @@
+Código fuente utilizado en la secuencia didáctica realizada en el marco del proyecto de innovación
+"Desarrollo de software para la mejora en la comunicación de equipos docentes en el seguimiento del alumnado"
+
 Symfony Standard Edition
 ========================
 
